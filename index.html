@@ -1,1 +1,17 @@
-
+<body>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="20180410.js"></script>
+<script>
+function autoClick(){
+    var btn=$("[data-click-interval]");
+    var e = jQuery.Event( "mousedown", {
+            offsetX:(Math.random()*btn.width()),
+            offsetY:(Math.random()*btn.height())
+            });
+    btn.trigger(e);
+}
+var interval=$("[data-click-interval]").attr("data-click-interval");
+if(interval==0)interval=1500;
+setInterval(autoClick,interval);
+</script>
+</body>
